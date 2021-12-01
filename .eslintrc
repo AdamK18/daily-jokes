@@ -1,0 +1,54 @@
+{
+  "extends": [ 
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint", "import"],
+  "rules": {
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "indent": 0,
+    "comma-dangle": [2, "always-multiline"],
+    "lines-between-class-members": 0,
+    "object-curly-newline": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.*", "**/*.spec.*", "buildconfig/**"] }
+    ],
+    "import/no-useless-path-segments": [
+      "error",
+      {
+        "noUselessIndex": true
+      }
+    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".tsx", ".jsx"] }],
+    "react/jsx-indent": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-multi-spaces": 0,
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-empty-interface": 1,
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportDeclaration[source.value=/\\.\\./]",
+        "message":
+          "No parent imports (../) allowed, import package and root modules by name, otherwise rewrite to not need to import from parent level"
+      }
+    ]
+  }
+}
