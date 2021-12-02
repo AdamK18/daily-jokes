@@ -1,1 +1,1 @@
-export {fetchCategories, fetchRandom} from './Api'
+export { fetchCategories, fetchRandom } from './Api';

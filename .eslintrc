@@ -1,5 +1,5 @@
 {
-  "extends": [ 
+  "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
@@ -46,9 +46,15 @@
       "error",
       {
         "selector": "ImportDeclaration[source.value=/\\.\\./]",
-        "message":
-          "No parent imports (../) allowed, import package and root modules by name, otherwise rewrite to not need to import from parent level"
+        "message": "No parent imports (../) allowed, import package and root modules by name, otherwise rewrite to not need to import from parent level"
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   }
 }

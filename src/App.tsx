@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { fetchCategories, fetchRandom } from './api';
+import React from 'react';
+import { Header } from 'components/Header';
+import { JokeList } from 'components/JokeList';
 
 const App: React.FC = () => {
-  const [categories, setCategories] = useState<string[]>([]);
-
-  useEffect(() => {
-    fetchCategories().then((categoriesData) => {
-      setCategories(categoriesData.data);
-    });
-
-    /* fetchRandom('fashion').then((joke) => {
-      console.log(joke.data);
-    }); */
-  }, []);
-
   return (
-    <>
-      {categories.map((category, i) => {
-        return <div key={i}>{category}</div>;
-      })}
-    </>
+    <React.Fragment>
+      <Header />
+      <JokeList />
+    </React.Fragment>
   );
 };
 
