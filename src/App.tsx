@@ -1,12 +1,12 @@
 import React from 'react';
 import { Header } from 'components/Header';
-import { JokeList } from 'components/JokeList';
+import { Body } from 'components/Body';
 
 const App: React.FC = () => {
   return (
     <React.Fragment>
       <Header />
-      <JokeList />
+      <Body />
     </React.Fragment>
   );
 };

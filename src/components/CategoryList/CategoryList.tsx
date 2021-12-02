@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { fetchCategories, fetchRandom } from 'api';
+import { fetchCategories } from 'api';
+import { Category } from 'components/Category';
 
-const JokeList = () => {
+interface jokeProps {
+  setJoke: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const CategoryList = ({ setJoke }: jokeProps) => {
   const [categories, setCategories] = useState<string[]>([]);
   useEffect(() => {
     fetchCategories().then((categoriesData) => {
@@ -16,10 +21,14 @@ const JokeList = () => {
   return (
     <div>
       {categories.map((category, i) => {
-        return <div key={i}>{category}</div>;
+        return (
+          <React.Fragment key={i}>
+            <Category category={category} />
+          </React.Fragment>
+        );
       })}
     </div>
   );
 };
 
-export default JokeList;
+export default CategoryList;
