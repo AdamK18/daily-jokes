@@ -1,1 +1,7 @@
-export type { jokePropsType, categoryListPropsType, categoryPropsType, fetchRandomType } from './types';
+export type {
+  jokePropsType,
+  categoryListPropsType,
+  categoryPropsType,
+  fetchRandomJokeType,
+  fetchCategoriesType,
+} from './types';

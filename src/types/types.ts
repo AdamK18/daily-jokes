@@ -11,6 +11,16 @@ export type jokePropsType = {
   joke: string;
 };
 
-export type fetchRandomType = {
-  value: string;
+export type MoreButtonPropsType = {
+  updateJoke: () => void;
+};
+
+export type fetchCategoriesType = {
+  data: string[];
+};
+
+export type fetchRandomJokeType = {
+  data: {
+    value: string;
+  };
 };
