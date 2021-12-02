@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import type { jokePropsType } from 'types';
 
-interface jokeProps {
-  joke: string;
-}
-
-const Joke = ({ joke }: jokeProps) => {
+const Joke = ({ joke }: jokePropsType) => {
   return <div>{joke}</div>;
 };
 

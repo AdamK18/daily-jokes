@@ -1,11 +1,8 @@
 import React from 'react';
+import type { categoryPropsType } from 'types';
 
-interface categoryProps {
-  category: string;
-}
-
-const Category = ({ category }: categoryProps) => {
-  return <div>{category}</div>;
+const Category = ({ category, setCategory }: categoryPropsType) => {
+  return <div onClick={() => setCategory(category)}>{category}</div>;
 };
 
 export default Category;
