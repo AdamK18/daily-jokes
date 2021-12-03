@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 });
 
 const Body = () => {
-  const [joke, setJoke] = useState<string>('Válassz egy kategóriát!');
+  const [joke, setJoke] = useState<string>('Please select a category.');
   const [category, setCategory] = useState<string>('');
   const classes = useStyles();
 
