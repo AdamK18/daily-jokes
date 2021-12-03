@@ -4,10 +4,22 @@ import { Joke } from 'components/Joke';
 import { fetchRandom } from 'api';
 import { MoreButton } from 'components/MoreButton';
 import { fetchRandomJokeType } from 'types/types';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  root: {
+    backgroundColor: '#F0F5F9',
+    minHeight: 'calc(100vh - 100px)',
+    height: '100%',
+    padding: '30px 0',
+    textAlign: 'center',
+  },
+});
 
 const Body = () => {
   const [joke, setJoke] = useState<string>('Válassz egy kategóriát!');
   const [category, setCategory] = useState<string>('');
+  const classes = useStyles();
 
   useEffect(() => {
     if (category.length > 0) {
@@ -22,11 +34,11 @@ const Body = () => {
   };
 
   return (
-    <div>
+    <main className={classes.root}>
       <Joke joke={joke} />
-      {category.length > 0 && <MoreButton updateJoke={updateJoke} />}
-      <CategoryList setCategory={setCategory} />
-    </div>
+      <MoreButton updateJoke={updateJoke} category={category} />
+      <CategoryList setCategory={setCategory} currentCategory={category} />
+    </main>
   );
 };
 

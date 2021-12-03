@@ -2,13 +2,11 @@ import React from 'react';
 import { MoreButtonPropsType } from 'types/types';
 import { Button } from '@mui/material';
 
-const MoreButton = ({ updateJoke }: MoreButtonPropsType) => {
+const MoreButton = ({ updateJoke, category }: MoreButtonPropsType) => {
   return (
-    <div>
-      <Button onClick={() => updateJoke()} variant="text">
-        Több viccet kérek
-      </Button>
-    </div>
+    <Button size="large" disabled={category.length === 0} onClick={() => updateJoke()} variant="text">
+      Load more jokes
+    </Button>
   );
 };
 
