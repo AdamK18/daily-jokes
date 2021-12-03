@@ -23,7 +23,7 @@ const CategoryList = ({ setCategory, currentCategory }: categoryListPropsType) =
   }, []);
 
   return (
-    <Grid className={classes.root} container spacing={3} alignItems="center" justifyContent="center">
+    <Grid className={classes.root} container alignItems="center" justifyContent="center">
       {categoryList.map((category) => (
         <Category key={category} category={category} setCategory={setCategory} currentCategory={currentCategory} />
       ))}

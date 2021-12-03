@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 const useStyles = makeStyles({
   root: {
     cursor: 'pointer',
-    paddingLeft: '0 !important',
+    padding: '12px 0 12px 0 !important',
   },
   button: {
     color: '#1E2022 !important',
